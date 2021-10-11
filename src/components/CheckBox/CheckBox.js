@@ -4,13 +4,13 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import * as S from "./style";
 
 const CheckBox = ({ isChecked, onChange, label, value }) => {
-  const handleChange = () => {
+  const handleChange = (value) => {
     onChange && onChange(value);
   };
   return (
     <S.CheckBox>
       <FormControlLabel
-        control={<Checkbox checked={isChecked} onChange={handleChange} color="primary" />}
+        control={<Checkbox checked={isChecked} onChange={handleChange} color="primary" value={value}/>}
         label={label}
       />
     </S.CheckBox>

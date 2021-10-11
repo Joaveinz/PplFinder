@@ -85,5 +85,10 @@ Total time: 15 minutes
 ## Task 1:
 
 
+Before looking at the code, I am assuming that these do not work since they are just visual checkboxes, they will need to be hooked up to the data.
 
+I attempted to implement something following my Angular knowledge, with local variables and such, but it turns out I needed to use something called a "react hook". In this case, I used the useState react hooks to store a list of country codes to filter by. The filtering is done upon rendering.
 
+Adding another country filter is simply a matter of adding another checkbox with the correct code and name.
+
+Total time: 1h 25m (I spent a while learning about React Hooks)

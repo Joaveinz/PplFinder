@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Text from "components/Text";
 import Spinner from "components/Spinner";
 import CheckBox from "components/CheckBox";
@@ -8,6 +8,15 @@ import * as S from "./style";
 
 const UserList = ({ users, isLoading }) => {
   const [hoveredUserId, setHoveredUserId] = useState();
+  const [countryFilter, setCountryFilter] = useState([]);
+
+  const filterCountry = (target) => {
+    if (!countryFilter?.includes(target.value) && target.checked) {
+      setCountryFilter([...countryFilter, target.value]);
+    } else if (!target.checked) {
+      setCountryFilter(countryFilter.filter(s => s !== target.value));
+    }
+  };
 
   const handleMouseEnter = (index) => {
     setHoveredUserId(index);
@@ -20,13 +29,20 @@ const UserList = ({ users, isLoading }) => {
   return (
     <S.UserList>
       <S.Filters>
-        <CheckBox value="BR" label="Brazil" />
-        <CheckBox value="AU" label="Australia" />
-        <CheckBox value="CA" label="Canada" />
-        <CheckBox value="DE" label="Germany" />
+        <CheckBox onChange={event => filterCountry(event.target)} value="BR" label="Brazil" />
+        <CheckBox onChange={event => filterCountry(event.target)} value="AU" label="Australia" />
+        <CheckBox onChange={event => filterCountry(event.target)} value="CA" label="Canada" />
+        <CheckBox onChange={event => filterCountry(event.target)} value="DE" label="Germany" />
+        <CheckBox onChange={event => filterCountry(event.target)} value="US" label="USA" />
       </S.Filters>
       <S.List>
-        {users.map((user, index) => {
+        {users.filter(user => {
+          if (countryFilter.length) {
+            return countryFilter?.includes(user?.nat);
+          } else {
+            return true;
+          }
+        }).map((user, index) => {
           return (
             <S.User
               key={index}
