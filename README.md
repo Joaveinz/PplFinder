@@ -70,3 +70,20 @@ After you've completed your tasks, and you are ready to submit it, do the follow
 3. Send us an email with your repo link & deployed app url.
 
 ## Good Luck!
+
+
+# Joachim's steps / results:
+
+## Getting started:
+
+- There were some speed issues with Github, but for some reason it worked better going throuh opera's VPN.
+- Had to manually install chodikar
+
+Total time: 15 minutes
+
+
+## Task 1:
+
+
+
+
