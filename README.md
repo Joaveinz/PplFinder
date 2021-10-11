@@ -79,7 +79,7 @@ After you've completed your tasks, and you are ready to submit it, do the follow
 - There were some speed issues with Github, but for some reason it worked better going throuh opera's VPN.
 - Had to manually install chodikar
 
-Total time: 15 minutes
+Total time: **15m**
 
 
 ## Task 1:
@@ -91,4 +91,31 @@ I attempted to implement something following my Angular knowledge, with local va
 
 Adding another country filter is simply a matter of adding another checkbox with the correct code and name.
 
-Total time: 1h 25m (I spent a while learning about React Hooks)
+Total time: **1h 25m** (I spent a while learning about React Hooks)
+
+# Task 2:
+
+Just looking at the task, it looks like we will need to make use of some local storage.
+
+My plan is to store a list of favorite users in local storage
+
+I started of by storing a whole object array in the localstorage, using npm local-storage package.
+
+Then found that it was more cumbersome to manage, and am now only storing the login IDs of the users.
+
+I have implemented a very crude way of routing, since material-ui does not natively deal with react routing, I am using `useHistory` and `useCallback` from react to manually change the route based on the nav tab clicked.
+
+I plan to refactor this, perhaps change it to a set of navLinks.
+
+Next steps:
+
+- Show only favourite users on favourite page
+- Refactor tabs to use better routing
+
+Total time up to now: **1h 22m**
+
+
+
+
+
+

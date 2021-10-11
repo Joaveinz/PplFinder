@@ -5,16 +5,22 @@ import CheckBox from "components/CheckBox";
 import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import * as S from "./style";
+import ls from 'local-storage';
+import { useEffect } from "react";
+
+
 
 const UserList = ({ users, isLoading }) => {
   const [hoveredUserId, setHoveredUserId] = useState();
   const [countryFilter, setCountryFilter] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   const filterCountry = (target) => {
     if (!countryFilter?.includes(target.value) && target.checked) {
       setCountryFilter([...countryFilter, target.value]);
     } else if (!target.checked) {
       setCountryFilter(countryFilter.filter(s => s !== target.value));
+      ls.set('key', 'value');
     }
   };
 
@@ -25,6 +31,18 @@ const UserList = ({ users, isLoading }) => {
   const handleMouseLeave = () => {
     setHoveredUserId();
   };
+
+  const toggleFavourite = (id) => {
+    let currentFavs = ls.get('favourites');
+    if (!currentFavs?.includes(id)) {
+      let newFavs = [...currentFavs || [], id];
+    } else {
+      let newFavs = currentFavs.filter(u => u !== id);
+    }
+
+    ls.set('favourites', newFavs);
+    setFavourites(newFavs);
+  }
 
   return (
     <S.UserList>
@@ -63,8 +81,8 @@ const UserList = ({ users, isLoading }) => {
                 </Text>
               </S.UserInfo>
               <S.IconButtonWrapper isVisible={index === hoveredUserId}>
-                <IconButton>
-                  <FavoriteIcon color="error" />
+                <IconButton onClick={event => toggleFavourite(user.login.uuid)}>
+                  <FavoriteIcon  color="error" />
                 </IconButton>
               </S.IconButtonWrapper>
             </S.User>
