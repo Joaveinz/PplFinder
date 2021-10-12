@@ -91,7 +91,9 @@ I attempted to implement something following my Angular knowledge, with local va
 
 Adding another country filter is simply a matter of adding another checkbox with the correct code and name.
 
-Total time: **1h 25m** (I spent a while learning about React Hooks)
+I spent a while learning about React Hooks too.
+
+Total time for Task 1: **1h 25m** 
 
 # Task 2:
 
@@ -107,15 +109,20 @@ I have implemented a very crude way of routing, since material-ui does not nativ
 
 I plan to refactor this, perhaps change it to a set of navLinks.
 
+-- BREAK -- 
+
+OK, this took a bit longer than I thought. I kind of hacked my way through it. There's a lot of refactoring to do.
+
+Still getting used to React hooks and functional components vs class components.
+
+Total time for Task 2: **3h 5m**
+
+
+# Task 3
+
+
 Next steps:
 
-- Show only favourite users on favourite page
 - Refactor tabs to use better routing
-
-Total time up to now: **1h 22m**
-
-
-
-
-
-
+- Fix selected tab on reloading page (or navigate to home page on reload)
+- Separation of concerns - move favourite page handling out of userList?
