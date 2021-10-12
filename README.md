@@ -122,12 +122,29 @@ Total time for Task 2: **3h 5m**
 
 TODO: write nicely
 
-tried using the same hook, ran into bad hook problem, used axios to just fetch new users. Loading is triggered on hover of last 8 items (works with screen)
+I started off trying to use the same fetchPeople hook, but ran into an "invalid hook call" problem.
 
-Problem is that the scrollbar is changing when loading.  Still work to do - refactoring.
+After trying a few different ways, I ended up just fetching new users from the same component.
+
+Loading gets triggered on hover of last 8 items as these last ones are at the bottom with my large screen.
+
+The problem is that the scrollbar is changing when loading.
+
+There is still refactoring work to do, but what is there now meets the task requirements.
 
 
 Total time for Task 3: **1h 28m**
+
+
+
+# Final
+
+I thought this was a great project to learn about react hooks.
+
+The requirements were clear.
+
+I would say the main big thing I learned is that I should be more flexible and not be too scared to make changes to existing code. This could have saved me two hours. 
+
 
 
 
