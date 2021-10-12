@@ -70,3 +70,91 @@ After you've completed your tasks, and you are ready to submit it, do the follow
 3. Send us an email with your repo link & deployed app url.
 
 ## Good Luck!
+
+
+# Joachim's steps / results:
+
+## Getting started:
+
+- There were some speed issues with Github, but for some reason it worked better going throuh opera's VPN.
+- Had to manually install chodikar
+
+Total time: **15m**
+
+
+## Task 1:
+
+
+Before looking at the code, I am assuming that these do not work since they are just visual checkboxes, they will need to be hooked up to the data.
+
+I attempted to implement something following my Angular knowledge, with local variables and such, but it turns out I needed to use something called a "react hook". In this case, I used the useState react hooks to store a list of country codes to filter by. The filtering is done upon rendering.
+
+Adding another country filter is simply a matter of adding another checkbox with the correct code and name.
+
+I spent a while learning about React Hooks too.
+
+Total time for Task 1: **1h 25m** 
+
+# Task 2:
+
+Just looking at the task, it looks like we will need to make use of some local storage.
+
+My plan is to store a list of favorite users in local storage
+
+I started of by storing a whole object array in the localstorage, using npm local-storage package.
+
+Then found that it was more cumbersome to manage, and am now only storing the login IDs of the users.
+
+I have implemented a very crude way of routing, since material-ui does not natively deal with react routing, I am using `useHistory` and `useCallback` from react to manually change the route based on the nav tab clicked.
+
+I plan to refactor this, perhaps change it to a set of navLinks.
+
+-- BREAK -- 
+
+OK, this took a bit longer than I thought. I kind of hacked my way through it. There's a lot of refactoring to do.
+
+Still getting used to React hooks and functional components vs class components.
+
+Total time for Task 2: **3h 5m**
+
+
+# Task 3
+
+TODO: write nicely
+
+I started off trying to use the same fetchPeople hook, but ran into an "invalid hook call" problem.
+
+After trying a few different ways, I ended up just fetching new users from the same component.
+
+Loading gets triggered on hover of last 8 items as these last ones are at the bottom with my large screen.
+
+The problem is that the scrollbar is changing when loading.
+
+There is still refactoring work to do, but what is there now meets the task requirements.
+
+
+Total time for Task 3: **1h 28m**
+
+
+
+# Final
+
+I thought this was a great project to learn about react hooks.
+
+The requirements were clear.
+
+I would say the main big thing I learned is that I should be more flexible and not be too scared to make changes to existing code. This could have saved me two hours. 
+
+
+
+
+Total time for tasks: **6h 15m**
+
+
+
+
+Next steps:
+
+- Refactor tabs to use better routing
+- Fix selected tab on reloading page (or navigate to home page on reload)
+- Separation of concerns - move favourite page handling out of userList?
