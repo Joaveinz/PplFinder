@@ -120,6 +120,21 @@ Total time for Task 2: **3h 5m**
 
 # Task 3
 
+TODO: write nicely
+
+tried using the same hook, ran into bad hook problem, used axios to just fetch new users. Loading is triggered on hover of last 8 items (works with screen)
+
+Problem is that the scrollbar is changing when loading.  Still work to do - refactoring.
+
+
+Total time for Task 3: **1h 28m**
+
+
+
+Total time for tasks: **6h 15m**
+
+
+
 
 Next steps:
 
