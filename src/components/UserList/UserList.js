@@ -7,7 +7,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import * as S from "./style";
 import ls from "local-storage";
 
-const UserList = ({ users, isLoading }) => {
+const UserList = ({ users, isLoading, onChange }) => {
   const [hoveredUserId, setHoveredUserId] = useState();
   const [countryFilter, setCountryFilter] = useState([]);
   const [favourites, setFavourites] = useState(null);
@@ -21,6 +21,9 @@ const UserList = ({ users, isLoading }) => {
   };
 
   const handleMouseEnter = (index) => {
+    if (index > (users.length - 8)) {
+      onChange(3);
+    }
     setHoveredUserId(index);
   };
 
