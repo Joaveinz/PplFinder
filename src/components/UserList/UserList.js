@@ -33,7 +33,7 @@ const UserList = ({ users, isLoading, onChange }) => {
 
   const toggleFavourite = (user) => {
     let currentFavs = ls.get("favourites");
-    let ids = currentFavs.map(f => f.login.uuid);
+    let ids = currentFavs?.map(f => f.login.uuid);
     let newFavs = [];
     if (!ids?.includes(user.login.uuid)) {
       newFavs = [...currentFavs || [], user];
